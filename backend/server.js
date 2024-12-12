@@ -7,7 +7,7 @@ import userRouter from "./routes/userRouter.js";
 import authRouter from "./routes/authRoute.js";
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
