@@ -1,0 +1,102 @@
+.add-food {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-food form {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-food .flex-col {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.add-food .flex-col p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.add-food input,
+.add-food select,
+.add-food textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.add-food input:focus,
+.add-food select:focus,
+.add-food textarea:focus {
+    border-color: #3498db;
+}
+
+.add-food .add-img-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-food .add-img-upload img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-food .add-img-upload input[type="file"] {
+    display: none;
+}
+
+.add-food .add-food-title input {
+    margin-top: 8px;
+}
+
+.add-food .add-category-price {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.add-food .add-category,
+.add-food .add-price {
+    width: 100%;
+}
+
+.add-food .add-btn {
+    padding: 12px;
+    background-color: tomato;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-food .add-btn:hover {
+    background-color: #2980b9;
+}
+
+.add-food .add-btn:active {
+    background-color: #21618c;
+}

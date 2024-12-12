@@ -1,0 +1,71 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: rgb(250, 115, 91);
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: tomato;
+    border-radius: 5px;
+}
+
+/* Nút Đăng Xuất */
+.logout-button {
+    margin-top: 20px;
+    /* Khoảng cách từ các mục danh sách */
+    padding: 10px 20px;
+    /* Padding cho nút */
+    background-color: #ff4d4d;
+    /* Màu nền đỏ */
+    color: white;
+    /* Màu chữ trắng */
+    border: none;
+    /* Bỏ đường viền */
+    border-radius: 5px;
+    /* Bo tròn góc */
+    cursor: pointer;
+    /* Hiển thị con trỏ chuột dạng bàn tay khi hover */
+    font-size: 16px;
+    /* Kích thước chữ */
+    width: 100%;
+    /* Chiếm toàn bộ chiều rộng của Sidebar */
+    text-align: center;
+    /* Canh giữa chữ */
+    transition: background-color 0.3s ease;
+    /* Hiệu ứng chuyển màu nền */
+}
+
+/* Hiệu ứng hover khi di chuột vào nút */
+.logout-button:hover {
+    background-color: #e60000;
+    /* Màu đỏ đậm khi hover */
+}
