@@ -5,9 +5,10 @@ import foodRouter from "./routes/foodRoute.js";
 import categoryRouter from "./routes/categoryRoute.js";
 import userRouter from "./routes/userRouter.js";
 import authRouter from "./routes/authRoute.js";
+import orderRouter from "./routes/orderRouter.js";
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
@@ -21,6 +22,7 @@ app.use("/api/food", foodRouter);
 app.use('/api/categories', categoryRouter);
 app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/orders', orderRouter);
 
 // Route cho ảnh
 app.use("/images", express.static('uploads'));

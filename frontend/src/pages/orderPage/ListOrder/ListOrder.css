@@ -1,0 +1,126 @@
+.list {
+    width: 100%;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.list-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.list-table th,
+.list-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.list-table th {
+    background-color: #f2f2f2;
+}
+
+.list-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.food-image {
+    width: 50px;
+    /* Chiều rộng hình ảnh */
+    height: 50px;
+    /* Chiều cao hình ảnh */
+    object-fit: cover;
+    /* Đảm bảo hình ảnh không bị méo */
+}
+
+.action-buttons {
+    display: flex;
+    gap: 5px;
+    /* Khoảng cách giữa các nút */
+}
+
+.cursor {
+    cursor: pointer;
+    color: red;
+    /* Màu sắc cho nút xóa */
+}
+
+.add-button,
+.edit-button,
+.remove-button {
+    background-color: #4CAF50;
+    /* Màu nền xanh */
+    color: white;
+    /* Màu chữ trắng */
+    border: none;
+    /* Không có viền */
+    padding: 10px 15px;
+    /* Khoảng cách bên trong */
+    text-align: center;
+    /* Căn giữa chữ */
+    text-decoration: none;
+    /* Không có gạch chân */
+    display: inline-block;
+    /* Hiển thị dưới dạng khối */
+    margin: 5px 0;
+    /* Khoảng cách trên và dưới */
+    cursor: pointer;
+    /* Con trỏ chuột */
+    border-radius: 4px;
+    /* Bo góc */
+    transition: background-color 0.3s;
+    /* Hiệu ứng chuyển màu nền */
+}
+
+/* Hiệu ứng hover cho nút */
+.add-button:hover,
+.edit-button:hover {
+    background-color: tomato;
+    /* Màu nền khi hover */
+}
+
+/* Định dạng cho nút xóa */
+.cursor {
+    background-color: #f44336;
+    /* Màu nền đỏ */
+    color: white;
+    /* Màu chữ trắng */
+    border-radius: 50%;
+    /* Bo góc thành hình tròn */
+    padding: 8px 12px;
+    /* Khoảng cách bên trong */
+    display: inline-block;
+    /* Hiển thị dưới dạng khối */
+    text-align: center;
+    /* Căn giữa chữ */
+    margin-left: 5px;
+    /* Khoảng cách bên trái */
+    cursor: pointer;
+    /* Con trỏ chuột */
+    transition: background-color 0.3s;
+    /* Hiệu ứng chuyển màu nền */
+}
+
+/* Hiệu ứng hover cho nút xóa */
+.cursor:hover {
+    background-color: #d32f2f;
+    /* Màu nền khi hover */
+}
+
+.search-input {
+    margin: 10px 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.list-table {
+    width: 100%;
+    margin-top: 20px;
+}

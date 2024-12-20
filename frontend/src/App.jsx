@@ -11,9 +11,10 @@ import UpdateCategory from './pages/categoryPage/UpdateCategory/UpdateCategory';
 import ListUser from './pages/userPage/ListUser/ListUser';
 import UpdateUser from './pages/userPage/UpdateUser/UpdateUser';
 import Login from './pages/authPage/Login'; // Import trang đăng nhập
+import ListOrder from './pages/orderPage/ListOrder/ListOrder';
 
 const App = () => {
-  const url = "http://localhost:5000";  // Define the base URL for your API
+  const url = "https://food-del-web-backend.onrender.com";  // Define the base URL for your API
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Kiểm tra trạng thái đăng nhập khi ứng dụng được tải
@@ -50,6 +51,7 @@ const App = () => {
             <Route path="/update-categories/:id" element={isAuthenticated ? <UpdateCategory url={url} /> : <Navigate to="/login" />} />
             <Route path="/list-user" element={isAuthenticated ? <ListUser url={url} /> : <Navigate to="/login" />} />
             <Route path="/update-user/:id" element={isAuthenticated ? <UpdateUser url={url} /> : <Navigate to="/login" />} />
+            <Route path="/list-orders" element={isAuthenticated ? <ListOrder url={url} /> : <Navigate to="/login" />} />
 
             {/* Route đăng nhập */}
             <Route path="/login" element={<Login onLoginSuccess={() => setIsAuthenticated(true)} />} />
