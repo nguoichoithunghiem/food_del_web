@@ -80,14 +80,8 @@ const ListOrder = ({ url }) => {
 
     // Sắp xếp danh sách đơn hàng từ dưới lên (mới nhất lên trên)
     const sortedList = filteredList.sort((a, b) => {
-        // Nếu bạn có trường createdAt thì dùng cái này để sắp xếp:
         return new Date(b.createdAt) - new Date(a.createdAt); // Giả sử có trường createdAt
     });
-
-    // Hàm tính toán tổng giá trị đơn hàng
-    const calculateTotalPrice = (items) => {
-        return items.reduce((total, item) => total + (item.foodPrice * item.quantity), 0);
-    };
 
     return (
         <div className='list-order flex-col'>
@@ -166,8 +160,8 @@ const ListOrder = ({ url }) => {
                                 ))}
                             </td>
                             <td>
-                                {/* Hiển thị tổng giá của đơn hàng */}
-                                {calculateTotalPrice(item.items)} VND
+                                {/* Hiển thị tổng giá của đơn hàng từ cơ sở dữ liệu */}
+                                {item.totalPrice} VND
                             </td>
                             <td>
                                 {/* Hiển thị ghi chú của đơn hàng */}

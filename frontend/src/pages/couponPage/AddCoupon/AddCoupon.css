@@ -1,0 +1,95 @@
+/* AddCoupon.css */
+
+.add-coupon {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-coupon h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.add-coupon form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.add-coupon .flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-coupon p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.add-coupon input,
+.add-coupon select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border 0.3s ease;
+}
+
+.add-coupon input:focus,
+.add-coupon select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.add-coupon button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-coupon button:hover {
+    background-color: #45a049;
+}
+
+.add-coupon button:focus {
+    outline: none;
+}
+
+.add-coupon input[type="datetime-local"] {
+    width: 100%;
+    font-size: 16px;
+}
+
+.add-coupon select {
+    width: 100%;
+}
+
+.add-coupon .add-coupon-code input,
+.add-coupon .add-coupon-description input,
+.add-coupon .add-coupon-discount-value input {
+    width: 100%;
+}
+
+.add-coupon .add-btn {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .add-coupon {
+        width: 80%;
+    }
+}
