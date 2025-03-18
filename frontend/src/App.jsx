@@ -18,7 +18,7 @@ import AddCoupon from './pages/couponPage/AddCoupon/AddCoupon';
 import ListReview from './pages/reviewpage/ListReview/ListReview';
 
 const App = () => {
-  const url = "http://localhost:5000";  // Define the base URL for your API
+  const url = "https://food-del-web-frontend-9nrs.onrender.com";  // Define the base URL for your API
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Kiểm tra trạng thái đăng nhập khi ứng dụng được tải
