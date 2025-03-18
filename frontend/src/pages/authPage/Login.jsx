@@ -12,7 +12,7 @@ const Login = ({ onLoginSuccess }) => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://food-del-web-frontend-9nrs.onrender.com/api/auth/login', { email, password });
+            const response = await axios.post('https://food-del-backend-nm2y.onrender.com/api/auth/login', { email, password });
             if (response.data.success) {
                 // Lưu trạng thái đăng nhập vào localStorage
                 localStorage.setItem('isLoggedIn', 'true');
