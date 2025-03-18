@@ -15,6 +15,7 @@ import ListOrder from './pages/orderPage/ListOrder/ListOrder';
 import ListCoupon from './pages/couponPage/ListCoupon/ListCoupon';
 import UpdateCoupon from './pages/couponPage/UpdateCoupon/UpdateCoupon';
 import AddCoupon from './pages/couponPage/AddCoupon/AddCoupon';
+import ListReview from './pages/reviewpage/ListReview/ListReview';
 
 const App = () => {
   const url = "http://localhost:5000";  // Define the base URL for your API
@@ -58,6 +59,7 @@ const App = () => {
             <Route path="/list-coupons" element={isAuthenticated ? <ListCoupon url={url} /> : <Navigate to="/login" />} />
             <Route path="/update-coupons/:id" element={isAuthenticated ? <UpdateCoupon url={url} /> : <Navigate to="/login" />} />
             <Route path="/add-coupons" element={isAuthenticated ? <AddCoupon url={url} /> : <Navigate to="/login" />} />
+            <Route path="/list-reviews" element={isAuthenticated ? <ListReview url={url} /> : <Navigate to="/login" />} />
 
             {/* Route đăng nhập */}
             <Route path="/login" element={<Login onLoginSuccess={() => setIsAuthenticated(true)} />} />

@@ -14,6 +14,7 @@ const Sidebar = ({ onLogout }) => {
                 <li><Link to="/list-user">Danh Sách Người Dùng</Link></li>
                 <li><Link to="/list-orders">Danh Sách Đơn Hàng</Link></li>
                 <li><Link to="/list-coupons">Danh Sách Mã Giảm Giá</Link></li>
+                <li><Link to="/list-reviews">Danh Sách Đánh Giá</Link></li>
             </ul>
 
             {/* Nút đăng xuất */}

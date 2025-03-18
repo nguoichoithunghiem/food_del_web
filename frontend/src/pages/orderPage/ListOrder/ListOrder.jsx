@@ -8,6 +8,8 @@ const ListOrder = ({ url }) => {
     const [list, setList] = useState([]);
     const [searchPhone, setSearchPhone] = useState(""); // Thêm state cho tìm kiếm theo số điện thoại
     const [searchStatus, setSearchStatus] = useState(""); // Thêm state cho tìm kiếm theo trạng thái
+    const [startDate, setStartDate] = useState(""); // Thêm state cho ngày bắt đầu
+    const [endDate, setEndDate] = useState(""); // Thêm state cho ngày kết thúc
 
     // Các trạng thái đơn hàng (đổi sang tiếng Việt)
     const orderStatuses = [
@@ -70,12 +72,23 @@ const ListOrder = ({ url }) => {
         fetchList();
     }, []);
 
-    // Hàm để lọc danh sách đơn hàng theo số điện thoại và trạng thái
+    // Hàm định dạng ngày giờ
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toLocaleString("vi-VN"); // Định dạng theo chuẩn Việt Nam (ngày/tháng/năm giờ:phút:giây)
+    };
+
+    // Hàm lọc danh sách đơn hàng theo số điện thoại, trạng thái, và khoảng ngày
     const filteredList = list.filter(item => {
         const matchesPhone = item.userPhone.toLowerCase().includes(searchPhone.toLowerCase());
         const matchesStatus = searchStatus ? item.status === searchStatus : true;
 
-        return matchesPhone && matchesStatus;
+        // Kiểm tra khoảng ngày
+        const orderDate = new Date(item.orderDate);
+        const isDateInRange = (!startDate || orderDate >= new Date(startDate)) &&
+            (!endDate || orderDate <= new Date(endDate));
+
+        return matchesPhone && matchesStatus && isDateInRange;
     });
 
     // Sắp xếp danh sách đơn hàng từ dưới lên (mới nhất lên trên)
@@ -110,26 +123,44 @@ const ListOrder = ({ url }) => {
                         </option>
                     ))}
                 </select>
+
+                {/* Input tìm kiếm theo khoảng ngày */}
+                <div className="date-filter">
+                    <input
+                        type="date"
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
+                        className="search-date-input"
+                    />
+                    <span>đến</span>
+                    <input
+                        type="date"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
+                        className="search-date-input"
+                    />
+                </div>
             </div>
 
             <table className="list-table">
                 <thead>
                     <tr>
-                        <th>Order ID</th> {/* Cột mới cho Order ID */}
+                        <th>Order ID</th>
                         <th>Tên Người Dùng</th>
                         <th>Số Điện Thoại</th>
                         <th>Địa Chỉ</th>
                         <th>Trạng Thái</th>
-                        <th>Món Ăn</th> {/* Cột hiển thị món ăn */}
-                        <th>Tổng Giá</th> {/* Cột hiển thị tổng giá */}
-                        <th>Ghi Chú</th> {/* Cột hiển thị ghi chú */}
-                        <th>Hành động</th> {/* Cột hiển thị hành động */}
+                        <th>Món Ăn</th>
+                        <th>Tổng Giá</th>
+                        <th>Ghi Chú</th>
+                        <th>Ngày đặt</th>
+                        <th>Hành động</th>
                     </tr>
                 </thead>
                 <tbody>
                     {sortedList.map((item, index) => (
                         <tr key={index}>
-                            <td>{item._id}</td> {/* Hiển thị Order ID */}
+                            <td>{item._id}</td>
                             <td>{item.userName}</td>
                             <td>{item.userPhone}</td>
                             <td>{item.userAddress}</td>
@@ -160,12 +191,16 @@ const ListOrder = ({ url }) => {
                                 ))}
                             </td>
                             <td>
-                                {/* Hiển thị tổng giá của đơn hàng từ cơ sở dữ liệu */}
+                                {/* Hiển thị tổng giá của đơn hàng */}
                                 {item.totalPrice} VND
                             </td>
                             <td>
                                 {/* Hiển thị ghi chú của đơn hàng */}
                                 {item.note || "Không có ghi chú"}
+                            </td>
+                            <td>
+                                {/* Hiển thị ngày đặt của đơn hàng */}
+                                {formatDate(item.orderDate) || "Không có ghi chú"}
                             </td>
                             <td>
                                 <p onClick={() => removeOrder(item._id)} className='cursor'>Xóa</p>
